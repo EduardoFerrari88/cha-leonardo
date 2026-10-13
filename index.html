@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chá de Fraldas do Leonardo 🚀</title>
+<style>
+:root{--bg:#070a26;--bg2:#1a1458;--card:rgba(255,255,255,.07);--tx:#f4f6ff;--mut:#b6bce6;--ac:#ffd166;--ac2:#6ee7f9;--pk:#ff7eb6;--bd:rgba(255,255,255,.16);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;color:var(--tx);background:radial-gradient(circle at 80% 0,#3a1f8f55,transparent 50%),linear-gradient(180deg,var(--bg),var(--bg2));overflow-x:hidden}
+.stars{position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(2px 2px at 20px 30px,#fff,transparent),radial-gradient(1.5px 1.5px at 90px 80px,#fff,transparent),radial-gradient(2px 2px at 160px 20px,#ffd166,transparent),radial-gradient(1px 1px at 230px 120px,#fff,transparent),radial-gradient(1.5px 1.5px at 300px 60px,#6ee7f9,transparent);background-size:320px 160px;animation:tw 4s infinite alternate}
+@keyframes tw{from{opacity:.4}to{opacity:1}}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-14px) rotate(6deg)}}
+@keyframes orb{to{transform:rotate(360deg)}}
+@keyframes fly{from{transform:translate(-20vw,20px) rotate(45deg)}to{transform:translate(110vw,-40px) rotate(45deg)}}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:10px;background:rgba(7,10,38,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--bd)}
+nav a{color:var(--tx);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:99px;border:1px solid var(--bd)}
+main{position:relative;max-width:800px;margin:0 auto;padding:0 16px 60px}
+.rocket{position:absolute;top:110px;left:0;font-size:30px;animation:fly 14s linear infinite;z-index:0}
+.hero{text-align:center;padding:40px 0 10px;position:relative}
+.planet{position:relative;width:200px;height:200px;margin:0 auto}
+.planet .p{position:absolute;inset:40px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffe29a,#ff9a56 60%,#b34a8a);box-shadow:0 0 50px #ff9a5666}
+.planet .ring{position:absolute;inset:0;border:2px dashed var(--ac2);border-radius:50%;animation:orb 20s linear infinite;opacity:.6}
+.planet .ring::after{content:"🛰️";position:absolute;top:-12px;left:50%;font-size:22px}
+.astro{position:absolute;inset:0;display:grid;place-items:center;font-size:76px;animation:fl 5s ease-in-out infinite}
+.kick{letter-spacing:4px;color:var(--ac2);font-size:13px;text-transform:uppercase;margin-top:10px}
+h1{font-size:clamp(34px,9vw,58px);margin:6px 0;line-height:1.05}
+h1 span{background:linear-gradient(90deg,var(--ac),var(--pk));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);font-size:17px}
+.badge{display:inline-block;margin-top:12px;padding:10px 20px;border:2px dashed var(--ac);border-radius:99px;color:var(--ac);font-weight:700}
+.count{display:flex;gap:10px;justify-content:center;margin:22px 0 6px}
+.count div{background:var(--card);border:1px solid var(--bd);border-radius:50%;width:78px;height:78px;display:grid;place-content:center}
+.count b{display:block;font-size:24px;color:var(--ac2)}.count small{color:var(--mut);font-size:11px}
+section{position:relative;background:var(--card);border:1px solid var(--bd);border-radius:26px 26px 26px 6px;padding:24px;margin-top:26px;backdrop-filter:blur(6px)}
+.tag{position:absolute;top:-13px;left:18px;background:linear-gradient(90deg,var(--ac),var(--pk));color:#1b1b3a;font-weight:800;font-size:12px;padding:4px 14px;border-radius:99px;letter-spacing:1px}
+h2{margin:6px 0 12px;font-size:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dc{background:rgba(0,0,0,.25);border:1px solid var(--bd);border-radius:20px;padding:14px;text-align:center}
+.dc svg{width:90px;height:90px}
+.dc h3{margin:4px 0 0;font-size:26px;color:var(--ac)}
+.dc .w{color:var(--mut);font-size:12px}
+.dc .pr{margin:8px 0;font-size:13px;color:var(--mut)}.dc .pr b{color:var(--tx);font-size:16px}
+.small{font-size:12px;color:var(--mut);margin-top:12px}
+label{display:block;margin:12px 0 4px;color:var(--mut);font-size:14px}
+input,textarea,select{width:100%;padding:12px;border-radius:12px;border:1px solid var(--bd);background:rgba(0,0,0,.3);color:var(--tx);font:inherit}
+.seg{display:flex;gap:8px}.seg button{flex:1}
+button{cursor:pointer;font:inherit;font-weight:700;border:0;border-radius:12px;padding:10px 14px;background:var(--ac);color:#1b1b3a}
+button.alt{background:transparent;color:var(--tx);border:1px solid var(--bd)}
+button.on{background:var(--ac2);color:#06223a;border-color:var(--ac2)}
+.full{width:100%;margin-top:16px;padding:13px}
+.pixbox{display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:center;background:rgba(110,231,249,.08);border:1px solid var(--ac2);border-radius:20px;padding:18px}
+#qr{background:#fff;padding:10px;border-radius:14px;min-width:180px;min-height:180px}
+#qr img,#qr canvas{display:block}
+.pinfo{flex:1;min-width:210px;text-align:center}
+.chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.key{font-family:monospace;font-size:18px;color:var(--ac2)}
+.msg{background:rgba(0,0,0,.25);border-radius:6px 18px 18px 18px;padding:12px 14px;margin-top:10px;border-left:3px solid var(--pk)}
+.msg b{color:var(--ac)}.msg p{margin:4px 0 0;white-space:pre-wrap;word-break:break-word}
+.ok{color:var(--ac2);margin-top:10px;min-height:20px}
+.list{color:var(--mut);font-size:14px;margin-top:10px}
+footer{text-align:center;color:var(--mut);margin-top:34px}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<nav><a href="#fraldas">🍼 Fraldas</a><a href="#pix">💸 Pix</a><a href="#rsvp">🚀 Presença</a><a href="#msgs">💌 Mensagens</a></nav>
+<main>
+<div class="rocket">🚀</div>
+<header class="hero">
+  <div class="planet"><div class="p"></div><div class="ring"></div><div class="astro">👨‍🚀</div></div>
+  <div class="kick">Contagem regressiva para a chegada de</div>
+  <h1><span>Leonardo</span></h1>
+  <div class="sub">Chá de Fraldas · Missão: bebê a bordo!</div>
+  <div class="badge">📅 20 de novembro</div>
+  <div class="count" id="count"></div>
+</header>
+
+<section><span class="tag">MISSÃO 01</span><h2>🪐 Detalhes</h2>
+  <div id="details">📍 Local e horário: <b>a confirmar</b> — avisaremos em breve!<br>🍼 Traga fraldas ou contribua pelo Pix.</div>
+</section>
+
+<section id="fraldas"><span class="tag">MISSÃO 02</span><h2>🍼 Suprimentos: fraldas</h2>
+  <div class="sub" style="font-size:14px">Escolha um tamanho para presentear — o Pix já vem com o valor.</div>
+  <div class="grid" id="sizes" style="margin-top:12px"></div>
+  <div class="small">Valores de referência pesquisados em outubro/2026 (Pampers Confort Sec) e podem variar por loja. Qualquer marca é bem-vinda! Tamanhos GG = XXG.</div>
+</section>
+
+<section id="pix"><span class="tag">MISSÃO 03</span><h2>💸 Pix</h2>
+  <div class="pixbox">
+    <div id="qr"></div>
+    <div class="pinfo">
+      <div class="sub">Chave Pix (celular)</div>
+      <div class="key">(13) 98817-1686</div>
+      <div class="chips" id="chips"></div>
+      <input id="amt" inputmode="decimal" placeholder="Outro valor (R$) — opcional" style="margin-bottom:8px">
+      <div id="amtlbl" class="sub" style="font-size:14px;margin-bottom:8px"></div>
+      <button id="copy">📋 Copiar Pix Copia e Cola</button>
+      <button class="alt" id="copyk">Copiar só a chave</button>
+      <div class="ok" id="cok"></div>
+    </div>
+  </div>
+  <div class="small">Abra o app do seu banco → Pix → Ler QR Code (ou Pix Copia e Cola).</div>
+</section>
+
+<section id="rsvp"><span class="tag">MISSÃO 04</span><h2>🚀 Confirmar presença</h2>
+  <label>Seu nome</label><input id="rn" maxlength="60" placeholder="Nome completo">
+  <label>Vai embarcar com a gente?</label>
+  <div class="seg"><button class="alt on" data-v="sim">Sim, estarei lá!</button><button class="alt" data-v="nao">Não poderei ir</button></div>
+  <label>Quantas pessoas (contando você)?</label>
+  <select id="rq"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+  <button class="full" id="rbtn">Confirmar</button>
+  <div class="ok" id="rok"></div><div class="list" id="rlist"></div>
+</section>
+
+<section id="msgs"><span class="tag">MISSÃO 05</span><h2>💌 Mural de mensagens</h2>
+  <label>Seu nome</label><input id="mn" maxlength="60" placeholder="Nome">
+  <label>Mensagem para o Leonardo e a família</label><textarea id="mt" rows="3" maxlength="400" placeholder="Escreva um recado carinhoso..."></textarea>
+  <button class="full" id="mbtn">Enviar mensagem</button>
+  <div class="ok" id="mok"></div><div id="msgl"></div>
+</section>
+<footer>Leonardo, bem-vindo ao universo! 🌙⭐</footer>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const CONFIG={date:"2026-11-20T15:00:00",pixKey:"+5513988171686",pixName:"CHA DO LEONARDO",pixCity:"SAO PAULO",details:""};
+const SIZES=[
+ {n:"P",kg:"5 a 7,5 kg",c:"#6ee7f9",a:"Pacotão 26 un",ap:35.90,b:"Mega 50 un",bp:68.51},
+ {n:"M",kg:"6 a 10 kg",c:"#ffd166",a:"Pacotão 20 un",ap:35.90},
+ {n:"G",kg:"9 a 13 kg",c:"#ff7eb6",a:"Pacotão 16 un",ap:35.90,b:"Super 60 un",bp:99.90},
+ {n:"GG",kg:"a partir de 14 kg",c:"#a78bfa",a:"Pacotão 12 un",ap:35.79,b:"Mega 30 un",bp:90.99}];
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const brl=v=>"R$ "+v.toFixed(2).replace(".",",");
+if(CONFIG.details)$("details").innerHTML=CONFIG.details;
+
+// fraldas (ilustração em SVG)
+const dsvg=(l,c)=>`<svg viewBox="0 0 100 100"><path d="M8 22h84v16c0 24-18 44-42 44S8 62 8 38z" fill="#fff"/><path d="M8 22h84v9H8z" fill="${c}"/><path d="M8 22l14 8M92 22l-14 8" stroke="#0004" stroke-width="2"/><rect x="2" y="24" width="14" height="10" rx="3" fill="${c}"/><rect x="84" y="24" width="14" height="10" rx="3" fill="${c}"/><text x="50" y="62" text-anchor="middle" font-size="26" font-weight="800" fill="${c}" font-family="Trebuchet MS,sans-serif">${l}</text><text x="50" y="76" text-anchor="middle" font-size="9">🚀</text></svg>`;
+$("sizes").innerHTML=SIZES.map((s,i)=>`<div class="dc">${dsvg(s.n,s.c)}<h3>${s.n}</h3><div class="w">${s.kg}</div>
+<div class="pr">${s.a}<br><b>${brl(s.ap)}</b> <button class="alt" data-p="${s.ap}">Presentear</button></div>
+${s.b?`<div class="pr">${s.b}<br><b>${brl(s.bp)}</b> <button class="alt" data-p="${s.bp}">Presentear</button></div>`:""}</div>`).join("");
+$("sizes").onclick=e=>{const p=e.target.dataset.p;if(p){setAmt(+p);$("pix").scrollIntoView()}};
+
+// Pix BR Code
+const f=(id,v)=>id+String(v.length).padStart(2,"0")+v;
+function crc16(s){let c=0xFFFF;for(let i=0;i<s.length;i++){c^=s.charCodeAt(i)<<8;for(let j=0;j<8;j++)c=(c&0x8000)?((c<<1)^0x1021):(c<<1);c&=0xFFFF}return c.toString(16).toUpperCase().padStart(4,"0")}
+function payload(v){let p=f("00","01")+f("01","11")+f("26",f("00","BR.GOV.BCB.PIX")+f("01",CONFIG.pixKey))+f("52","0000")+f("53","986")+(v>0?f("54",v.toFixed(2)):"")+f("58","BR")+f("59",CONFIG.pixName)+f("60",CONFIG.pixCity)+f("62",f("05","***"))+"6304";return p+crc16(p)}
+let amount=0,code="";
+function setAmt(v){amount=v>0?v:0;$("amt").value=amount?String(amount).replace(".",","):"";draw()}
+function draw(){code=payload(amount);$("amtlbl").textContent=amount?"Valor: "+brl(amount):"Valor livre: você digita no app";
+ const q=$("qr");q.innerHTML="";try{new QRCode(q,{text:code,width:180,height:180,correctLevel:QRCode.CorrectLevel.M})}catch(e){q.textContent="QR indisponível — use o Copia e Cola."}}
+$("chips").innerHTML=[20,50,100].map(v=>`<button class="alt" data-v="${v}">${brl(v)}</button>`).join("");
+$("chips").onclick=e=>{if(e.target.dataset.v)setAmt(+e.target.dataset.v)};
+$("amt").oninput=()=>{amount=parseFloat($("amt").value.replace(",","."))||0;draw()};
+async function cp(t,m){try{await navigator.clipboard.writeText(t);$("cok").textContent=m}catch(e){$("cok").textContent="Não foi possível copiar automaticamente."}}
+$("copy").onclick=()=>cp(code,"Pix Copia e Cola copiado! ✅");
+$("copyk").onclick=()=>cp("13988171686","Chave copiada! ✅");
+draw();
+
+// contagem
+function tick(){const d=new Date(CONFIG.date)-new Date();if(d<=0){$("count").innerHTML="<b style='color:var(--ac)'>É hoje! 🚀</b>";return}
+const v=[[Math.floor(d/864e5),"dias"],[Math.floor(d/36e5)%24,"horas"],[Math.floor(d/6e4)%60,"min"],[Math.floor(d/1e3)%60,"seg"]];
+$("count").innerHTML=v.map(x=>`<div><b>${x[0]}</b><small>${x[1]}</small></div>`).join("")}
+tick();setInterval(tick,1000);
+
+// dados
+let db=null,local={rsvp:[],messages:[]};
+try{local=JSON.parse(localStorage.getItem("leo")||"")||local}catch(e){}
+const saveLocal=()=>{try{localStorage.setItem("leo",JSON.stringify(local))}catch(e){}};
+function renderR(items){const y=items.filter(i=>i.going);const n=y.reduce((s,i)=>s+(+i.qty||1),0);
+$("rlist").innerHTML=items.length?`✅ ${n} pessoa(s) confirmada(s): ${y.map(i=>esc(i.name)).join(", ")||"—"}`:"Seja o primeiro a confirmar!"}
+function renderM(items){items=[...items].sort((a,b)=>b.ts-a.ts);$("msgl").innerHTML=items.map(m=>`<div class="msg"><b>${esc(m.name)}</b><p>${esc(m.text)}</p></div>`).join("")||'<p class="list">Ainda sem mensagens. Deixe a primeira! 💫</p>'}
+renderR(local.rsvp);renderM(local.messages);
+(async()=>{try{const c=window.claude&&await claude.use("db");if(!c)return;db=c;
+ db.collection("rsvp").onSnapshot(s=>renderR(s.docs.map(d=>d.data())),()=>{});
+ db.collection("messages").onSnapshot(s=>renderM(s.docs.map(d=>d.data())),()=>{});}catch(e){db=null}})();
+async function put(col,obj){if(db){try{await db.collection(col).add(obj);return}catch(e){}}
+ local[col].push(obj);saveLocal();col==="rsvp"?renderR(local.rsvp):renderM(local.messages)}
+let going=true;
+document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{going=b.dataset.v==="sim";document.querySelectorAll(".seg button").forEach(x=>x.classList.toggle("on",x===b))});
+$("rbtn").onclick=async()=>{const name=$("rn").value.trim();if(!name){$("rok").textContent="Informe seu nome 🙂";return}
+ await put("rsvp",{name,going,qty:going?+$("rq").value:0,ts:Date.now()});$("rn").value="";
+ $("rok").textContent=going?"Presença confirmada! Te esperamos, astronauta! 🚀":"Obrigado por avisar! 💙"};
+$("mbtn").onclick=async()=>{const name=$("mn").value.trim(),text=$("mt").value.trim();if(!name||!text){$("mok").textContent="Preencha nome e mensagem 🙂";return}
+ await put("messages",{name,text,ts:Date.now()});$("mt").value="";$("mok").textContent="Mensagem enviada! 💌"};
+</script>
+</body>
+</html>
