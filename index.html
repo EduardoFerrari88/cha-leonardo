@@ -124,6 +124,7 @@ h1 span{background-image:linear-gradient(90deg,#e8a23a,#e66fa0,#8b78e6)}
   <div class="sub">Nosso pequeno astronauta já está em órbita!</div>
   <div class="pills"><div class="pill"><svg class="ic"><use href="#i-cal"/></svg>20 de novembro · 14h às 20h</div><div class="pill" id="where"><svg class="ic"><use href="#i-pin"/></svg><a href="https://maps.app.goo.gl/J55poAidtsHnwsGv8" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">R. Antônio Baracal, 840 · Guarujá</a></div></div>
   <div class="count" id="count"></div>
+  <div class="hint" id="mhintbar" style="text-align:center;margin-bottom:10px">🎵 Toque em qualquer lugar da tela para ouvir a música</div>
   <a class="cta" href="#rsvp"><svg class="ic"><use href="#i-rkt"/></svg>Confirmar presença</a><a class="cta g" href="#fraldas"><svg class="ic"><use href="#i-gift"/></svg>Escolher presente</a>
 </header>
 
@@ -149,7 +150,6 @@ h1 span{background-image:linear-gradient(90deg,#e8a23a,#e66fa0,#8b78e6)}
 </main>
 
 <div id="bar"><div class="bi"><div class="t" id="bt"></div><div class="step"><button id="bm">−</button><b id="bq">1</b><button id="bp">+</button></div><button class="cta" id="pay" style="margin:0"><svg class="ic"><use href="#i-pix"/></svg>Pagar com Pix</button></div></div>
-<button class="mus" id="mus" aria-label="Música de fundo">🎵</button>
 <div id="mod"><div class="mc"><button class="x" id="mx">✕</button><h2 style="margin:0">Pix para o Leonardo</h2><div class="sub" id="ml"></div><div id="qr"></div>
 <div class="sub">Chave (celular)</div><div class="key">(13) 98817-1686</div>
 <button class="cta" id="copy" style="width:100%;justify-content:center"><svg class="ic"><use href="#i-cp"/></svg>Copiar Pix Copia e Cola</button>
@@ -203,17 +203,19 @@ document.querySelectorAll("section").forEach(s=>io.observe(s));
 
 // mural de recados (visível para todos) — adicione os recados aqui
 const MESSAGES=[
- // {name:"Maria",text:"Parabéns! O Leonardo vai ser muito amado!",date:"2026-11-20"}
+ {name:"EDUARDO FERRARI",text:"NOME: EDUARDO - TE AMO MEU FILHO!!!",date:"2026-10-13"},
+ {name:"EDUARDO FERRARI",text:"TE AMO MEU FILHO!",date:"2026-10-13"}
 ];
 function renderM(){const items=[...MESSAGES].sort((a,b)=>(b.date||"").localeCompare(a.date||""));
 $("mc").textContent=items.length?`${items.length} recado(s) para o Leonardo`:"Recados dos convidados";
 $("msgl").innerHTML=items.length?items.map(m=>`<div class="msg"><div class="av">${esc((m.name||"?").trim().charAt(0).toUpperCase())}</div><div><b>${esc(m.name)}</b>${m.date?`<small>${new Date(m.date+"T12:00:00").toLocaleDateString("pt-BR")}</small>`:""}<p>${esc(m.text)}</p></div></div>`).join(""):'<div class="sub" style="text-align:center;padding:14px">Ainda sem recados. Seja o primeiro! 💫</div>'}
 renderM();
 {const a=$("mform"),u=CONFIG.msgFormUrl||CONFIG.formUrl;if(u)a.href=u;else{a.removeAttribute("href");a.style.opacity=.6;$("mhint").textContent="Em breve!"}}
-// música de fundo (YouTube) — toque no botão 🎵 (navegadores não tocam áudio sozinho)
-{const m=(CONFIG.musicUrl||"").match(/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/),b=$("mus");
-if(m){b.classList.add("show");let fr=null,on=false;const cmd=f=>fr&&fr.contentWindow.postMessage(JSON.stringify({event:"command",func:f,args:""}),"*");
-b.onclick=()=>{if(!fr){fr=document.createElement("iframe");fr.src=`https://www.youtube.com/embed/${m[1]}?autoplay=1&loop=1&playlist=${m[1]}&enablejsapi=1&playsinline=1`;fr.allow="autoplay; encrypted-media";fr.title="Música de fundo";fr.style.cssText="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;left:-10px;top:-10px;border:0";document.body.appendChild(fr);on=true}else{on=!on;cmd(on?"playVideo":"pauseVideo")}b.classList.toggle("on",on);b.textContent=on?"⏸":"🎵"}}}
+// música de fundo (YouTube), sempre tocando: começa no primeiro toque na tela
+{const m=(CONFIG.musicUrl||"").match(/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/),hint=$("mhintbar");
+if(!m){if(hint)hint.remove()}else{let started=false;const ev=["pointerdown","keydown","touchstart"];
+const go=()=>{if(started)return;started=true;ev.forEach(e=>removeEventListener(e,go));if(hint)hint.remove();const fr=document.createElement("iframe");fr.src=`https://www.youtube.com/embed/${m[1]}?autoplay=1&loop=1&playlist=${m[1]}&playsinline=1&controls=0`;fr.allow="autoplay; encrypted-media";fr.title="Música de fundo";fr.style.cssText="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;left:-10px;top:-10px;border:0";document.body.appendChild(fr)};
+ev.forEach(e=>addEventListener(e,go,{passive:true}))}}
 // link do formulário de presença (cole em CONFIG.formUrl)
 {const a=$("rform");if(CONFIG.formUrl){a.href=CONFIG.formUrl}else{a.removeAttribute("href");a.style.opacity=.6;$("rhint").textContent="O formulário de presença estará disponível em breve!"}}
 </script>
